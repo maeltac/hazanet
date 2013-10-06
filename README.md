@@ -1,9 +1,10 @@
 hazanet 0.0.1
 =======
 2013-10-05
+
 Working code for the iHazAbot hazard detection robot.
 
-Primary control run using Raspberry Pi v2
+Primary control run using Raspberry Pi v2.
 Packages Required:
 * Python 3.3.2
 * raspberry-gpio-python https://code.google.com/p/raspberry-gpio-python/
@@ -36,6 +37,7 @@ Visual Sensors:
 Support Systems:
 ---------------------------------------
 * Sensor UART MUX/DEMUX - Not Started
+* SensorNet Operation - Started
 * Sensor Data Backhaul - Not Started
 * Power Management - Not Started
 * Motion Controler Backup Access - Not Started
