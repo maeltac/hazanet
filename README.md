@@ -1,6 +1,6 @@
-hazanet
+hazanet 0.0.1
 =======
-
+2013-10-05
 Working code for the iHazAbot hazard detection robot.
 
 Primary control run using Raspberry Pi v2
