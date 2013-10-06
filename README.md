@@ -7,6 +7,7 @@ Working code for the iHazAbot hazard detection robot.
 Primary control run using Raspberry Pi v2.
 Packages Required:
 * Python 3.3.2
+* python-gps, gpsd, gpsd-clients(?)
 * raspberry-gpio-python https://code.google.com/p/raspberry-gpio-python/
 
 Location Sensors:

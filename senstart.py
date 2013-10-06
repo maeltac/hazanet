@@ -2,7 +2,8 @@ import os
 import sys
 import positional as posi
 import sense          # this is the sensor function library
-from sense import Sensor as Sensor
+#from sense import Sensor as Sensor
+import pdb
 
 
 
@@ -12,7 +13,6 @@ for each tick. This program will then take the
 
 Note: This completely breaks realtime, but will be necessary, since each sensor will be bringing in data at different
 rates. While time correlation is not really necessary, it may be useful for longer-term data analysis.
-
 """
 
 
@@ -21,11 +21,11 @@ def init_sensor(sentype):
     """
     Check for Sensor Support, and send initialize
     """
-    if sentype in Sensor.supported(sentype):        #TODO: Make sensor initialization not dependant on unordered set. Startup is kinda creepy.
-        status = Sensor.startup(sentype)
+    sen = sense.Sensor()
+    if sentype in sen.supported():
+        status = sen.startup(sentype)
     else:
         status = 'Unsupported Sensor'
-
     return status
 
 
@@ -33,35 +33,21 @@ def init_location():
     """
     initialize the GPS, and return current location
     """
-    print('\nInitializing GPS\n----------------------------------------')
-    location = {}
-
-    location['lat'] = 37.24     # Groom Lake!
-    location['lon'] = -115.81   # Groom Lake!
-    location['head'] = 180 # Direction from (Not sure if MagNorth or TrueNorth?)
+    gobj = posi.Gps()        # Create GPS Object
+    location = gobj.init_gps()
 
     return location
 
-def zero_accel():
-    """
-    Zeros the accelerometer, and determines which axis gravity is operating
-    """
-    print('\nZeroing Accelerometer and Gyro\n----------------------------------------')
-    gravaxis = {}
-    gravaxis['x'] = 526
-    gravaxis['y'] = 566
-    gravaxis['z'] = 946
 
-    axistotal = gravaxis['x'] + gravaxis['y'] + gravaxis['z']
-
-
-         #each axis will be a signed decimal of the initial "flat"
-    return gravaxis
 
 
 if __name__ == "__main__":
 
     #Startdat
+
+
+
+
     startstat ={}   # Startup status of all sensor systems
     print("Startup initiated\n----------------------------------------")
     startstat['RAD'] = init_sensor("RAD")
@@ -76,10 +62,14 @@ if __name__ == "__main__":
 
 
     start_loc = init_location()
+
     print("GPS Calibrated at:", start_loc['lat'],start_loc['lon'] )
     print("Heading:", start_loc['head'])
     print("Balance Calibrated, gravity axis: ")
-    accel_init = zero_accel()
-    for key, value in accel_init.items():
-            print (key, value)
+    #accel_init = posi.Accel.zero_accel(Accel,1)
+    #for key, value in accel_init.items():
+            #print (key, value)
 
+
+    # Set tick rate in Hz
+    TICKS_PER_SECOND = 10
