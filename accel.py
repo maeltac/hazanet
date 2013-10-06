@@ -30,7 +30,7 @@ last_y = 500            # initialized at 500 = no acceleration
 last_z = 626            # initialized at 626 = accel due to gravity
 
 
-# function to read SPI data from MCP 3008 chip
+# function to read SPI data from MCP 3008 chip  may be used for other ADC
 
 def readadc(adcnum, clk_pin, mosi_pin, miso_pin, cs_pin, bitwidth):
     """
