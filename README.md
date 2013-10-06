@@ -1,7 +1,8 @@
 hazanet
 =======
 
-Working code for the iHazAbot hazard detection robot
+Working code for the iHazAbot hazard detection robot.
+Primary control run using Raspberry Pi v2
 
 hazanet codebase is for operating the sensors
 
