@@ -8,11 +8,11 @@ Packages Required:
 * Python 3.3.2
 * raspberry-gpio-python https://code.google.com/p/raspberry-gpio-python/
 
-Power Regulation - Not Started
-
 Location Sensors:
 ----------------------------------
 GPS Reciever - Not Started
+Accelerometer - Started
+Pitch Calculation - Not Started
 Temperature Sensor - Not Started
 Humidity Sensor - Not Started
 Thermopile Sensor - Not Started
